@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Oswald&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #433ae0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Estilos para texto de encabezado */
+.menu  h1{
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    padding-left: 20px;
+}
+
+/* Estilos para el contenedor de la calculadora*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #383661;
+    box-shadow: rgba(53, 61,97, 0.38) 0px 30px 60px -12px inset, rgba(62,225,247, 0.88) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+}
+
+
+.heading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px 0 10px 0;
+    font-family: 'Antonio', sans-serif;
+}
+
+#tip{
+    color: white;
+    font-size: 1rem;
+    font-family: 'Antonio', sans-serif;
+}
+
+.text {
+    width: 230px;
+    background-color: white;
+    align-items: right;
+    flex-direction: column;
+    border-radius: 5px;
+    opacity: 80%;
+}
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    padding: 3px;
+}
+
+#result{
+    height: 80px;
+    text-align: right;
+}
+
+.type-number {
+    padding: 5px 10px;
+    width: 59px;
+    outline: none;
+    margin: 0.5px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    box-shadow: rgba(182, 182, 211, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+}
+
+.type-operation {
+    padding: 5px 10px;
+    width: 59px;
+    outline: none;
+    margin: 0.5px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    box-shadow: rgba(32, 92, 126, 0.25) 0px 30px 60px -12px inset, rgba(40, 123, 179, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+}
+
+.type-number:active {
+    background-color: #757474;
+}
+
+.type-operation:active {
+    background-color: #757474;
+}
+
+#equal {
+    color: white;
+    font-size: 2rem;
+    grid-row: span 2;
+    box-shadow: rgba(245, 8, 8, 0.788) 0px 30px 60px -12px inset, rgba(228, 6, 6, 0.89) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+}
+
+#equal:active {
+    background-color: #757474;
+}
+
+#ans {
+    width: 59px;
+    text-align: start;
+    outline: none;
+    font-size: 1.5rem;
+    border: none;
+    box-shadow: rgba(32, 92, 126, 0.25) 0px 30px 60px -12px inset, rgba(40, 123, 179, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+}
+
+/*======ESTILOS PARA EL DISPLAY CON EL PRIMER NUMERO INGRESADO=======*/
+
+#history {
+    height: 10px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 15px;
+    color: #919191;
+}
+
+#output {
+    height: 40px;
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+/*=====Estilos para burbujas animadas con botones para hacer operacion=====*/
+
+.burbuja-mas{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+
+    animation: burbujas 3s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.burbuja-menos{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+
+    animation: burbujas 3s linear infinite;
+    animation-delay: 2.7s;
+}
+
+.burbuja-por{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: 0;
+    left: 68%;
+
+    animation: burbujas 3s linear infinite;
+    animation-delay: 5s;
+}
+
+.burbuja-entre{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: 0;
+    left: 80%;
+
+    animation: burbujas 3s linear infinite;
+    animation-delay: 7s;
+}
+
+.burbuja{
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+    position: absolute;
+    bottom: 0;
+    animation: burbujas 3s linear infinite;
+}
+
+/*=======Estilos y animaciones de burbujas normales======*/
+
+.burbuja:nth-child(1){
+    width: 70px;
+    height: 70px;
+    left: 10%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(2){
+    width: 50px;
+    height: 50px;
+    left: 20%;
+    animation-duration: 3s;
+    animation-delay: 1.5s;
+}
+
+.burbuja:nth-child(3){
+    width: 35px;
+    height: 35px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(4){
+    width: 60px;
+    height: 60px;
+    left: 60%;
+    animation-duration: 3s;
+    animation-delay: 2.5s;
+}
+
+.burbuja:nth-child(5){
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(6){
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    animation-duration: 3s;
+    animation-delay: 3.5s;
+}
+
+.burbuja-mas img{
+    width: 70px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.burbuja-menos img{
+    width: 70px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.burbuja-por img{
+    width: 70px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.burbuja-entre img{
+    width: 70px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+/*=====Esrilos para botones en burbujas======*/
+.btn-mas{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 6px;
+    margin-top: 6px;
+    border: none;
+}
+
+.btn-menos{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 6px;
+    margin-top: 6px;
+    border: none;
+}
+
+.btn-mul{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 6px;
+    margin-top: 6px;
+    border: none;
+}
+
+.btn-entre{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 6px;
+    margin-top: 6px;
+    border: none;
+}
+
+.btn-mas img {
+    margin-top: -8px;
+    margin-left: -13px; 
+}
+
+.btn-menos img {
+    margin-top: -8px;
+    margin-left: -13px; 
+}
+
+.btn-mul img {
+    margin-top: -8px;
+    margin-left: -13px; 
+}
+
+.btn-entre img {
+    margin-top: -8px;
+    margin-left: -13px; 
+}
+
+@keyframes burbujas {
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    70%{
+        transform: translateX(-30px);
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width : 350px){
+    .menu h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    .heading {
+        text-align: center;
+        font-size: 2rem;
+        color: white;
+    }
+    .grid-item {
+        padding: 5px 10px;
+        margin: 1px;
+        width: 59px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}

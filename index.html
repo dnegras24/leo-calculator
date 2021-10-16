@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="./img/calcular.png">
+</head>
+<body>
+    <header class="menu">
+        <h1>Leonard's Calculator</h1>
+    </header>
+    <div class="container">
+        <!-- Seccion de texto -->
+        <label class="heading">Calculator</label>
+        <p id="tip">Tip: click the bubbles to do magic!</p>
+        <div class="text">
+            <div id="result">
+                <div id="history">
+                    <p id="history-value"></p>
+                </div>
+                <div id="output">
+                    <p id="output-value"></p>
+                </div>
+            </div>
+           
+        </div>
+        <!--SECCION DE BOTONES-->
+        <div class="grid-container">
+            <!-- Row 1 -->
+            <button class="type-operation">+</button>
+            <button class="type-operation">-</button>
+            <button class="type-operation">*</button>
+            <button class="type-operation">/</button>
+            <!-- Row 2 -->
+            <button class="type-number" id="7">7</button>
+            <button class="type-number" id="8">8</button>
+            <button class="type-number" id="9">9</button>
+            <button class="type-operation">AC</button>
+            
+            <!-- Row 3 -->
+            <button class="type-number" id="4">4</button>
+            <button class="type-number" id="5">5</button>
+            <button class="type-number" id="6">6</button>
+            <button class="type-operation">C</button>
+
+            <!-- Row 4 -->
+            <button class="type-number" id="1">1</button>
+            <button class="type-number" id="2">2</button>
+            <button class="type-number" id="3">3</button>
+            <button class="type-operation" id="equal">=</button>
+            <!-- Ro 5 -->
+            <button class="type-operation" id=".">.</button>
+            <button class="type-number" id="0">0</button>
+            <button class="type-operation" id="ans">ANS</button>
+        </div>
+    </div>
+    <!-- BURBUJAS ANIMADAS-->
+    <div class="burbujas">
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja-mas">
+            <button class="btn-mas" onclick="buSuma()"><img src="./img/mas.png"></button>
+        </div>
+        <div class="burbuja-menos">
+            <button class="btn-menos" onclick="buResta()"><img src="./img/menos (1).png"></button>
+        </div>
+        <div class="burbuja-por">
+            <button class="btn-mul" onclick="buMul()"><img src="./img/asterisco.png"></button>
+        </div>
+        <div class="burbuja-entre">
+            <button class="btn-entre" onclick="buEntre()"><img src="./img/division.png"></button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
